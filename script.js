@@ -2,9 +2,15 @@ var width = $(".divCard").width();
 var height = $(".divCard").height();
 
 var projection = d3.geo.mercator()
-  .center([0, 50])
-  .scale(700)
+  .center([0 ,0])
+  .scale(250)
   .rotate([0, 0]);
+
+
+
+  projection.translate([width/2, height/2]);
+
+
 
 var svg = d3.select(".divCard").append("svg")
   .attr("width", width)
@@ -12,6 +18,8 @@ var svg = d3.select(".divCard").append("svg")
 
 var path = d3.geo.path()
   .projection(projection);
+
+  
 
 var g = svg.append("g");
 
